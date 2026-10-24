@@ -97,7 +97,7 @@ function Index() {
               <div className="relative px-4 pb-5 text-center">
                 <Sparkle className="mx-auto h-2.5 w-2.5 text-peach/80" />
                 <span className="mt-3 block font-serif text-2xl text-peach md:text-[1.7rem]">{o}</span>
-                <span className="mt-2 block text-[0.6rem] uppercase tracking-[0.2em] text-peach/70">View venues</span>
+                <span className="mt-2 block text-[0.6rem] uppercase tracking-[0.2em] text-peach/90">View venues</span>
               </div>
             </Link>
           ))}
