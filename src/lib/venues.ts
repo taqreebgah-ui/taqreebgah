@@ -9,7 +9,7 @@ export const venues: Venue[] = [
   { name: "The Noor Mahal", city: "Lahore", area: "Gulberg", capacity: "200 – 1,200 guests", price: "PKR 850,000", image: v1, type: "Banquet Hall" },
   { name: "Zaitoon Gardens", city: "Islamabad", area: "Bani Gala", capacity: "100 – 500 guests", price: "PKR 450,000", image: v2, type: "Open-air Lawn" },
   { name: "Haveli Rosewood", city: "Islamabad", area: "F-7", capacity: "80 – 350 guests", price: "PKR 600,000", image: v3, type: "Heritage Estate" },
-  { name: "Sahil Pavilion", city: "Karachi", area: "DHA Phase 8", capacity: "300 – 1,500 guests", price: "PKR 1,100,000", image: hero, type: "Marquee" },
+  { name: "Sahil Pavilion", city: "Karachi", area: "DHA Phase 8", capacity: "300 – 1,500 guests", price: "PKR 1,100,000", image: v4, type: "Marquee" },
 ];
 
 export const occasions = ["Wedding", "Mehndi", "Barat", "Walima", "Engagement", "Birthday"];
