@@ -2,6 +2,12 @@ import v1 from "@/assets/venue-1.jpg";
 import v2 from "@/assets/venue-2.jpg";
 import v3 from "@/assets/venue-3.jpg";
 import v4 from "@/assets/venue-4.jpg";
+import ocWedding from "@/assets/occasion-wedding.jpg";
+import ocMehndi from "@/assets/occasion-mehndi.jpg";
+import ocBarat from "@/assets/occasion-barat.jpg";
+import ocWalima from "@/assets/occasion-walima.jpg";
+import ocEngagement from "@/assets/occasion-engagement.jpg";
+import ocBirthday from "@/assets/occasion-birthday.jpg";
 
 export type Venue = { name: string; city: string; area: string; capacity: string; price: string; image: string; type: string };
 
@@ -13,4 +19,13 @@ export const venues: Venue[] = [
 ];
 
 export const occasions = ["Wedding", "Mehndi", "Barat", "Walima", "Engagement", "Birthday"];
+
+export const occasionImages: Record<string, string> = {
+  Wedding: ocWedding,
+  Mehndi: ocMehndi,
+  Barat: ocBarat,
+  Walima: ocWalima,
+  Engagement: ocEngagement,
+  Birthday: ocBirthday,
+};
 export const cities = ["Lahore", "Karachi", "Islamabad", "Rawalpindi", "Faisalabad", "Multan"];

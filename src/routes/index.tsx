@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Compass, Scale, MessageCircle, ArrowRight } from "lucide-react";
 import hero from "@/assets/hero-alt.jpg";
 import v2 from "@/assets/venue-2.jpg";
-import { venues, occasions, cities } from "@/lib/venues";
+import { venues, occasions, cities, occasionImages } from "@/lib/venues";
 import { VenueCard } from "@/components/VenueCard";
 import { Divider, FloralCorner, Sparkle } from "@/components/Botanical";
 
@@ -76,18 +76,29 @@ function Index() {
       {/* Occasions */}
       <section className="mx-auto max-w-7xl px-6 pt-28 lg:px-10">
         <SectionHead eyebrow="Explore by occasion" title="For every" italic="chapter" />
-        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-6">
           {occasions.map((o) => (
             <Link
               key={o}
               to="/explore"
-              className="group relative flex aspect-[3/4] flex-col items-center justify-center overflow-hidden border border-border bg-card transition-colors duration-500 hover:border-terracotta hover:bg-peach"
+              className="group relative flex aspect-[3/4] flex-col justify-end overflow-hidden rounded-sm border border-border"
             >
-              <FloralCorner className="absolute -right-6 -top-6 h-24 w-24 text-sage opacity-60 transition-transform duration-700 group-hover:rotate-6" />
-              <FloralCorner className="absolute -bottom-6 -left-6 h-24 w-24 rotate-180 text-rose" />
-              <Sparkle className="h-3 w-3 text-terracotta" />
-              <span className="mt-4 font-serif text-2xl text-cocoa md:text-3xl">{o}</span>
-              <span className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">View venues</span>
+              <img
+                src={occasionImages[o]}
+                alt={`${o} celebration setting`}
+                loading="lazy"
+                width={768}
+                height={1024}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.07]"
+              />
+              <div className="absolute inset-0 bg-veil-card transition-opacity duration-700 group-hover:opacity-90" />
+              <FloralCorner className="absolute -right-5 -top-5 h-20 w-20 text-peach opacity-40 transition-transform duration-700 group-hover:rotate-6" />
+              <span className="pointer-events-none absolute inset-2 border border-peach/25" />
+              <div className="relative px-4 pb-5 text-center">
+                <Sparkle className="mx-auto h-2.5 w-2.5 text-peach/80" />
+                <span className="mt-3 block font-serif text-2xl text-peach md:text-[1.7rem]">{o}</span>
+                <span className="mt-2 block text-[0.6rem] uppercase tracking-[0.2em] text-peach/90">View venues</span>
+              </div>
             </Link>
           ))}
         </div>

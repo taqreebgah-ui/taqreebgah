@@ -74,6 +74,7 @@
 
   --shadow-soft: 0 24px 50px -30px color-mix(in oklab, var(--cocoa) 45%, transparent);
   --veil: linear-gradient(180deg, color-mix(in oklab, var(--cocoa) 10%, transparent) 0%, color-mix(in oklab, var(--cocoa) 55%, transparent) 100%);
+  --veil-card: linear-gradient(180deg, color-mix(in oklab, var(--cocoa) 26%, transparent) 0%, color-mix(in oklab, var(--cocoa) 0%, transparent) 38%, color-mix(in oklab, var(--cocoa) 44%, transparent) 66%, color-mix(in oklab, var(--cocoa) 88%, transparent) 100%);
 }
 
 @layer base {
@@ -108,6 +109,10 @@
 
 @utility bg-veil {
   background-image: var(--veil);
+}
+
+@utility bg-veil-card {
+  background-image: var(--veil-card);
 }
 
 @utility btn-olive {
