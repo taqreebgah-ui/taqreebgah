@@ -16,7 +16,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-2 lg:grid-cols-[auto_1fr_auto] lg:px-10">
         <Link to="/" className="shrink-0" aria-label="Taqreebgah home">
-          <img src={logo.url} alt="Taqreebgah" className="h-12 w-auto md:h-14" width={1270} height={450} />
+          <img src={logo.url} alt="Taqreebgah" className="h-12 w-auto mix-blend-multiply md:h-14" width={1270} height={450} />
         </Link>
         <nav className="hidden justify-center gap-10 lg:flex">
           {nav.map((n) => (
