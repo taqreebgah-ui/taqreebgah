@@ -14,7 +14,10 @@ export function SelectField({ label, options, value, placeholder, onValueChange,
   return (
     <div className={cn("flex flex-col gap-1.5 bg-card px-6 py-4", className)}>
       <span className="text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">{label}</span>
-      <Select value={value} onValueChange={onValueChange}>
+      <Select
+        {...(value !== undefined ? { value } : {})}
+        {...(onValueChange ? { onValueChange } : {})}
+      >
         <SelectTrigger
           className={cn(
             "h-7 rounded-none border-0 border-b border-border/70 bg-transparent p-0 font-serif text-lg text-cocoa shadow-none transition-colors",
