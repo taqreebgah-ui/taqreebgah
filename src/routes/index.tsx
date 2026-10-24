@@ -3,6 +3,7 @@ import { Search, Compass, Scale, MessageCircle, ArrowRight } from "lucide-react"
 import hero from "@/assets/hero-alt.jpg";
 import v2 from "@/assets/venue-2.jpg";
 import { venues, occasions, cities, occasionImages } from "@/lib/venues";
+import { SelectField } from "@/components/SelectField";
 import { VenueCard } from "@/components/VenueCard";
 import { Divider, FloralCorner, Sparkle } from "@/components/Botanical";
 
