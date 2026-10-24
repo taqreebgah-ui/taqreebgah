@@ -1,7 +1,7 @@
 import v1 from "@/assets/venue-1.jpg";
 import v2 from "@/assets/venue-2.jpg";
 import v3 from "@/assets/venue-3.jpg";
-import hero from "@/assets/hero.jpg";
+import v4 from "@/assets/venue-4.jpg";
 
 export type Venue = { name: string; city: string; area: string; capacity: string; price: string; image: string; type: string };
 
