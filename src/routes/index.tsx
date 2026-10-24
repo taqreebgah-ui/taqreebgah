@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Compass, Scale, MessageCircle, ArrowRight } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero-alt.jpg";
 import v2 from "@/assets/venue-2.jpg";
 import { venues, occasions, cities } from "@/lib/venues";
 import { VenueCard } from "@/components/VenueCard";
@@ -38,7 +38,7 @@ function Index() {
       {/* Hero */}
       <section className="relative">
         <div className="relative h-[82vh] min-h-[560px] overflow-hidden">
-          <img src={hero} alt="Floral wedding aisle at a garden venue" width={1920} height={1088} className="h-full w-full object-cover" />
+          <img src={hero} alt="Long banquet table set with candles and florals in a sandstone courtyard venue" width={1920} height={1080} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-veil" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
             <p className="eyebrow reveal text-peach">Venues for every taqreeb</p>
