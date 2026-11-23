@@ -30,7 +30,7 @@ export function EventPlannerCard({ planner }: { planner: EventPlanner }) {
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
               <MapPin className="h-3 w-3" />
-              {planner.city}
+              Karachi
             </span>
             <span className="rounded bg-terracotta/10 px-2 py-0.5 text-xs text-terracotta">Event Planner</span>
           </div>
@@ -49,8 +49,8 @@ export function EventPlannerCard({ planner }: { planner: EventPlanner }) {
           {/* Price & Portfolio */}
           <div className="mt-2 flex items-baseline justify-between">
             <div>
+              <span className="text-xs text-muted-foreground">From approx. </span>
               <span className="font-semibold text-sm text-cocoa">{planner.priceDisplay}</span>
-              <span className="text-xs text-muted-foreground"> starting</span>
             </div>
             {planner.portfolioCount && (
               <span className="text-xs text-muted-foreground">

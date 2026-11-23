@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { MapPin, Users, Star } from "lucide-react";
-import type { Venue } from "@/lib/venues";
+import { venueSlug, type Venue } from "@/lib/venues";
 
 export function VenueCard({ v }: { v: Venue }) {
   return (
     <article className="group cursor-pointer">
-      <Link href="/explore" className="block">
+      <Link href={`/venues/${venueSlug(v)}`} className="block">
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-card">
           <img
@@ -30,7 +30,7 @@ export function VenueCard({ v }: { v: Venue }) {
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
               <MapPin className="h-3 w-3" />
-              {v.city}
+              {v.area}, Karachi
             </span>
             <span>{v.type}</span>
           </div>
@@ -49,8 +49,8 @@ export function VenueCard({ v }: { v: Venue }) {
           {/* Price & Reviews */}
           <div className="mt-2 flex items-baseline justify-between">
             <div>
+              <span className="text-xs text-muted-foreground">Approx. </span>
               <span className="font-semibold text-sm text-cocoa">{v.priceDisplay}</span>
-              <span className="text-xs text-muted-foreground"> / event</span>
             </div>
             {v.reviewCount && (
               <span className="text-xs text-muted-foreground">

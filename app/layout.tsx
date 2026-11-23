@@ -4,19 +4,17 @@ import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Taqreebgah — Wedding & Event Venues in Pakistan",
-  description: "Discover and enquire at Pakistan's most beautiful wedding and celebration venues.",
+  title: "Taqreebgah — Event Venues & Planners in Karachi",
+  description: "Discover banquet halls, marquees, restaurants, farmhouses and event planners across Karachi for every celebration.",
   openGraph: {
-    title: "Taqreebgah — Wedding & Event Venues in Pakistan",
-    description: "Discover and enquire at Pakistan's most beautiful wedding and celebration venues.",
+    title: "Taqreebgah — Event Venues & Planners in Karachi",
+    description: "Discover banquet halls, marquees, restaurants, farmhouses and event planners across Karachi for every celebration.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
   },
-  icons: {
-    icon: "/favicon.png",
-  },
+  // Favicons come from app/icon.png and app/apple-icon.png (generated from the logo).
 };
 
 export default function RootLayout({

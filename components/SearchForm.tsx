@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { SelectField } from "@/components/SelectField";
-import { cities, occasions } from "@/lib/venues";
+import { availableAreas, occasionTypes } from "@/lib/venues";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -20,9 +20,9 @@ export function SearchForm() {
       onSubmit={(e) => e.preventDefault()}
       className="relative z-10 mx-auto -mt-16 grid max-w-5xl gap-px overflow-hidden rounded-sm border border-border bg-border shadow-soft md:grid-cols-[1fr_1fr_1fr_auto] mx-5 md:mx-auto"
     >
-      <SelectField label="City" placeholder="Any city" options={cities} />
-      <SelectField label="Event type" placeholder="Any occasion" options={occasions} />
-      <Field label="Guest count">
+      <SelectField label="Preferred Area" placeholder="Any area in Karachi" options={availableAreas.map((a) => a.area)} />
+      <SelectField label="Your Occasion" placeholder="Any occasion" options={occasionTypes} />
+      <Field label="Number of Guests">
         <input
           type="number"
           placeholder="e.g. 300"
@@ -30,7 +30,7 @@ export function SearchForm() {
         />
       </Field>
       <Link href="/explore" className="btn-olive rounded-none py-6">
-        <Search className="h-4 w-4" /> Find Venues
+        <Search className="h-4 w-4" /> Explore Venues
       </Link>
     </form>
   );
