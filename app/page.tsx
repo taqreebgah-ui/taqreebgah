@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Compass, Scale, MessageCircle, ArrowRight } from "lucide-react";
-import { HeroSlideshow, type HeroSlide } from "@/components/HeroSlideshow";
 import { venues, categories, featuredOccasions, availableAreas, exploreHref, EVENT_PLANNERS } from "@/lib/venues";
 import { VenueCard } from "@/components/VenueCard";
 import { Divider, FloralCorner, Sparkle } from "@/components/Botanical";
@@ -21,10 +20,17 @@ export const metadata = {
   },
 };
 
-const heroSlides: HeroSlide[] = [
-  { src: "/hero/courtyard-lanterns.jpg", alt: "Golden courtyard glowing under lantern light" },
-  { src: "/hero/courtyard-blossoms.jpg", alt: "Courtyard filled with blossoms at golden hour" },
-  { src: "/hero/lanterns-crimson.jpg", alt: "Vintage lanterns among crimson blooms" },
+const collageImages = [
+  { src: "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?w=400&q=80", alt: "South Asian wedding ceremony with floral decor", top: "0%", left: "5%", width: "38%", rotate: "-7deg", zIndex: 2, aspect: "4/3" },
+  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80", alt: "Elegant banquet hall table setting", top: "2%", left: "50%", width: "32%", rotate: "5deg", zIndex: 3, aspect: "3/4" },
+  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&q=80", alt: "Vibrant celebration with colorful decor", top: "22%", left: "2%", width: "30%", rotate: "4deg", zIndex: 4, aspect: "3/4" },
+  { src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80", alt: "Birthday celebration with golden decorations", top: "18%", left: "30%", width: "40%", rotate: "-3deg", zIndex: 5, aspect: "4/3" },
+  { src: "https://images.unsplash.com/photo-1478146059778-26028b07395a?w=400&q=80", alt: "Beautifully decorated outdoor venue", top: "15%", left: "64%", width: "30%", rotate: "8deg", zIndex: 3, aspect: "1/1" },
+  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&q=80", alt: "Grand event hall with chandeliers", top: "42%", left: "4%", width: "36%", rotate: "-5deg", zIndex: 6, aspect: "4/3" },
+  { src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400&q=80", alt: "Wedding couple at reception", top: "38%", left: "40%", width: "32%", rotate: "4deg", zIndex: 5, aspect: "3/4" },
+  { src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400&q=80", alt: "Celebration with festive lights", top: "60%", left: "10%", width: "35%", rotate: "6deg", zIndex: 7, aspect: "4/3" },
+  { src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=400&q=80", alt: "Outdoor wedding ceremony setup", top: "55%", left: "50%", width: "34%", rotate: "-6deg", zIndex: 6, aspect: "1/1" },
+  { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80", alt: "Floral decorations at venue", top: "75%", left: "28%", width: "40%", rotate: "3deg", zIndex: 8, aspect: "4/3" },
 ];
 
 function SectionHead({ eyebrow, title, italic, text }: { eyebrow: string; title: string; italic?: string; text?: string }) {
@@ -47,56 +53,70 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate flex h-[100svh] min-h-[600px] items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 -z-20">
-          <HeroSlideshow slides={heroSlides} />
-        </div>
-        <div aria-hidden className="hero-overlay absolute inset-0 -z-10" />
+      <section className="pt-28 sm:pt-36 lg:pt-40 px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+          {/* Left — text content */}
+          <div className="flex flex-col items-start">
+            <p
+              className="hero-fade-up eyebrow text-deep-green"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Karachi&apos;s Event Venue &amp; Planner Discovery Platform
+            </p>
+            <h1
+              className="hero-fade-up mt-4 text-[2.25rem] leading-[1.08] tracking-[-0.01em] text-cocoa sm:text-5xl md:text-6xl"
+              style={{ animationDelay: "0.35s" }}
+            >
+              Your Perfect{" "}
+              <em className="font-normal italic">Celebration</em>{" "}
+              Starts Here
+            </h1>
+            <p
+              className="hero-fade-up mt-5 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
+              style={{ animationDelay: "0.5s" }}
+            >
+              Discover banquet halls, marquees, restaurants, farmhouses, and event planners
+              across Karachi. Explore options that match your occasion, preferred area, guest
+              count, and budget — all in one place.
+            </p>
+            <div
+              className="hero-fade-up mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-5"
+              style={{ animationDelay: "0.65s" }}
+            >
+              <Link href="/explore" className="hero-cta hero-cta-solid w-full sm:w-auto">
+                Explore Venues <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href={exploreHref({ category: EVENT_PLANNERS })} className="hero-cta hero-cta-ghost w-full sm:w-auto">
+                Find Event Planners
+              </Link>
+            </div>
+          </div>
 
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center px-5 pt-28 pb-16 text-center sm:px-12 sm:pt-40">
-          <p
-            className="hero-fade-up eyebrow flex items-center gap-3 text-[0.62rem] tracking-[0.22em] text-peach/90 sm:gap-4 sm:text-[0.7rem] sm:tracking-[0.32em]"
-            style={{ animationDelay: "0.15s" }}
-          >
-            <span aria-hidden className="hidden h-px w-10 shrink-0 bg-current sm:block sm:w-16" />
-            Karachi's Event Venue &amp; Planner Discovery Platform
-            <span aria-hidden className="hidden h-px w-10 shrink-0 bg-current sm:block sm:w-16" />
-          </p>
-          <h1
-            className="hero-fade-up hero-title mt-4 text-[2.25rem] leading-[1.06] tracking-[-0.01em] text-peach sm:text-5xl md:text-6xl lg:text-[4.5rem]"
-            style={{ animationDelay: "0.3s" }}
-          >
-            Your Perfect
-            <br />
-            <em className="font-normal">Event</em> Starts Here
-          </h1>
-          <p
-            className="hero-fade-up hero-copy mt-4 max-w-2xl text-pretty text-base leading-relaxed text-peach/90 md:text-lg"
-            style={{ animationDelay: "0.45s" }}
-          >
-            Discover banquet halls, marquees, restaurants, farmhouses, and event planners across Karachi. Explore
-            options that match your occasion, preferred area, guest count, and budget — all in one place.
-          </p>
-          <div
-            className="hero-fade-up mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row sm:gap-5"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <Link href="/explore" className="hero-cta hero-cta-solid w-full sm:w-auto">
-              Explore Venues <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link href={exploreHref({ category: EVENT_PLANNERS })} className="hero-cta hero-cta-ghost w-full sm:w-auto">
-              Find Event Planners
-            </Link>
+          {/* Right — photo cluster collage */}
+          <div className="hero-cluster hero-fade-up" style={{ animationDelay: "0.15s" }}>
+            {collageImages.map((img, i) => (
+              <div
+                key={img.src}
+                className={`hero-cluster-photo${i >= 8 ? " hidden lg:block" : ""}`}
+                style={{
+                  top: img.top,
+                  left: img.left,
+                  width: img.width,
+                  transform: `rotate(${img.rotate})`,
+                  zIndex: img.zIndex,
+                  aspectRatio: img.aspect,
+                }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading={i < 3 ? "eager" : "lazy"}
+                  className="hero-media"
+                />
+              </div>
+            ))}
           </div>
         </div>
-
-        <a
-          href="#categories"
-          aria-label="Scroll to explore spaces and services"
-          className="hero-scroll-cue absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-peach/75 transition-colors hover:text-peach"
-        >
-          <span className="hero-scroll-line" />
-        </a>
       </section>
 
       {/* Categories */}
