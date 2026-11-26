@@ -243,16 +243,18 @@
   color: #fff;
   border: 1px solid transparent;
   box-shadow: 0 14px 30px -16px rgb(184 115 51 / 0.45);
+  font-weight: 600;
 }
 .hero-cta-solid:hover { background: var(--muted-gold); }
 
 .hero-cta-ghost {
-  border: 1px solid var(--deep-green);
+  border: 2px solid var(--deep-green);
   color: var(--deep-green);
-  background: transparent;
+  background: color-mix(in srgb, var(--deep-green) 8%, transparent);
+  font-weight: 600;
 }
 .hero-cta-ghost:hover {
-  background: color-mix(in srgb, var(--deep-green) 8%, transparent);
+  background: transparent;
   border-color: var(--deep-green);
 }
 

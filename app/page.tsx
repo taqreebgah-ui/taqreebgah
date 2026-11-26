@@ -53,31 +53,40 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 sm:pt-36 lg:pt-40 px-5 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <section className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 px-5 sm:px-8 lg:px-12 overflow-hidden flex items-center">
+        {/* Fireworks background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-15"
+          aria-hidden="true"
+        >
+          <source src="/fireworks.mp4" type="video/mp4" />
+        </video>
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Left — text content */}
           <div className="flex flex-col items-start">
             <p
-              className="hero-fade-up eyebrow text-deep-green"
+              className="hero-fade-up eyebrow text-deep-green font-bold"
               style={{ animationDelay: "0.2s" }}
             >
-              Karachi&apos;s Event Venue &amp; Planner Discovery Platform
+              Your venue search, simplified
             </p>
             <h1
-              className="hero-fade-up mt-4 text-[2.25rem] leading-[1.08] tracking-[-0.01em] text-cocoa sm:text-5xl md:text-6xl"
-              style={{ animationDelay: "0.35s" }}
+              className="hero-fade-up mt-4 text-[1.75rem] leading-[1.15] tracking-[-0.01em] text-cocoa font-light sm:text-4xl md:text-5xl"
+              style={{ animationDelay: "0.35s", fontFamily: "'Poppins', sans-serif" }}
             >
-              Your Perfect{" "}
-              <em className="font-normal italic">Celebration</em>{" "}
-              Starts Here
+              Find perfect taqreebgah<br /> for your events
             </h1>
             <p
-              className="hero-fade-up mt-5 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground md:text-lg"
+              className="hero-fade-up mt-5 max-w-lg text-pretty text-base leading-relaxed text-cocoa/80 md:text-lg"
               style={{ animationDelay: "0.5s" }}
             >
-              Discover banquet halls, marquees, restaurants, farmhouses, and event planners
-              across Karachi. Explore options that match your occasion, preferred area, guest
-              count, and budget — all in one place.
+              Browse banquet halls, marquees, farmhouses, restaurants &amp; event planners
+              across Karachi, all in one place. Our aim is to make venue selection feel
+              exciting, not exhausting.
             </p>
             <div
               className="hero-fade-up mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-5"

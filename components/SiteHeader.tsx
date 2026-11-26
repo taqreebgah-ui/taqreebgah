@@ -34,7 +34,7 @@ export function SiteHeader() {
   return (
     <header className={`${isHome ? "fixed inset-x-0" : "sticky"} header-solid top-0 z-50 border-b`}>
       <div className="px-5 py-1 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[1fr_auto_1fr]">
           <Link href="/" className="shrink-0" aria-label="Taqreebgah home">
             <Image
               src="/brand_name.png"
@@ -51,7 +51,7 @@ export function SiteHeader() {
               <Link
                 key={n.to}
                 href={n.to}
-                className={`text-[0.78rem] uppercase tracking-[0.18em] transition-colors ${
+                className={`text-[0.78rem] font-semibold uppercase tracking-[0.18em] transition-colors ${
                   pathname === n.to ? "text-terracotta" : "text-foreground/80 hover:text-terracotta"
                 }`}
               >
@@ -59,8 +59,8 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
-            <NavSearch className="hidden w-64 py-1.5! sm:flex xl:w-72" />
+          <div className="flex items-center gap-3 justify-self-end">
+            <NavSearch className="hidden w-80 py-1.5! sm:flex xl:w-96" />
             <button className="text-cocoa lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
