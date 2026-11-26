@@ -72,7 +72,7 @@ export default function Home() {
               className="hero-fade-up eyebrow text-deep-green font-bold"
               style={{ animationDelay: "0.2s" }}
             >
-              Your venue search, simplified
+              Karachi&apos;s Event Venue &amp; Planner Discovery Platform
             </p>
             <h1
               className="hero-fade-up mt-4 text-[1.75rem] leading-[1.15] tracking-[-0.01em] text-cocoa font-light sm:text-4xl md:text-5xl"
